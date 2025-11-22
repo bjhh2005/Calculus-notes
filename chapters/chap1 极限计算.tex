@@ -17,6 +17,13 @@
 \end{align*}
 \end{solution}
 
+\begin{points}
+\begin{itemize}
+    \item 添项减项法 / 分项求极限
+    \item 幂次根号等价无穷小: $\sqrt[k]{1+u}-1 \sim u/k$
+\end{itemize}
+\end{points}
+
 \begin{question}
 计算
 \[
@@ -33,6 +40,14 @@
 &=\frac{1}{2} \cdot \frac{n(n+1)(2n+1)}{6} = \frac{n(n+1)(2n+1)}{12} 
 \end{align*}
 \end{solution}
+
+\begin{points}
+\begin{itemize}
+    \item 连锁拆项法 / 反复添项减项
+    \item $\lim \frac{1-\cos u}{u^2} = \frac{1}{2}$
+    \item $\sum k^2$ 平方和公式
+\end{itemize}
+\end{points}
 
 \begin{note}
 前面两个都是添项减项法的运用。其实还有另一种做法。
@@ -52,6 +67,14 @@
 \end{align*}
 \end{solution}
 
+\begin{points}
+\begin{itemize}
+    \item 对数法: $u-1 \sim \ln u$ ($\text{当 } u \to 1 \text{ 时}$)
+    \item 乘积极限化为和式极限 (利用 $\ln(AB)=\ln A + \ln B$)
+    \item $\ln(1+u)$ 等价无穷小 ($\sim u$)
+\end{itemize}
+\end{points}
+
 \begin{question}
 计算\[
 \lim_{x \to 0} \frac{1 - \cos{x}\cos{x} \dots \cos{x}}{x^{2}}
@@ -65,8 +88,16 @@
 &= -\sum_{k=1}^{n} \lim_{x \to 0} \frac{\ln \cos kx}{x^{2}}\\
 &= -\sum_{k=1}^{n} \lim_{x \to 0} \frac{\cos kx - 1}{x^{2}}\\
 &= -\sum_{k=1}^{n} (-\frac{1}{2}k^{2}) = \frac{n(n+1)(2n+1)}{12}\\
-\end{align*}  
+\end{align*}  
 \end{solution}
+
+\begin{points}
+\begin{itemize}
+    \item 对数法 (乘积型极限简化)
+    \item $\ln(\cos u)$ 等价无穷小 ($\sim -u^2/2$)
+    \item $\sum k^2$ 平方和公式
+\end{itemize}
+\end{points}
 
 \begin{note}
 先反用$\ln x \sim x - 1 (x \to 1)$，再正用$\ln x \sim x - 1 (x \to 1)$，尤其适用于含有"$A_1 A_2 \dots A_n - 1$"结构的极限。
@@ -90,6 +121,14 @@
 \end{align*}
 \end{solution}
 
+\begin{points}
+\begin{itemize}
+    \item 对数法 (根式/乘积混合极限)
+    \item $\ln(\cos u)$ 等价无穷小 ($\sim -u^2/2$)
+    \item $\sum k$ 等差数列求和公式
+\end{itemize}
+\end{points}
+
 \begin{question}
 计算\[
 \lim_{x \to 0} \frac{(1 - \cos x) \left[x - \ln(1 + \tan x)\right]}{x^{4}}
@@ -105,6 +144,14 @@
 &=\frac{1}{4}
 \end{align*}
 \end{solution}
+
+\begin{points}
+\begin{itemize}
+    \item 等价无穷小替换 (乘积型)
+    \item Taylor/高阶无穷小: $x - \ln(1+u) \sim u^2/2$
+    \item 拆分代换 (利用 $\tan x \sim x$ 简化内部结构)
+\end{itemize}
+\end{points}
 
 \begin{note}
 $x- \ln (1+x) \sim \frac{x^2}{2} \quad(x \to 0)$
@@ -126,6 +173,14 @@ $x- \ln (1+x) \sim \frac{x^2}{2} \quad(x \to 0)$
 \end{align*}
 \end{solution}
 
+\begin{points}
+\begin{itemize}
+    \item 无穷小的吸收律 (分母简化)
+    \item 指数差型极限 $A^x - B^x$ 提取公因式
+    \item $(1+u)^v - 1 \sim v \ln(1+u)$
+\end{itemize}
+\end{points}
+
 \begin{question}
 设$f(x),g(x)$在$x=0$的邻域$U$内有定义，且对$\forall x \in U$, 均有$f(x) \neq g(x)$, 且$\lim_{x \to 0} f(x)=\lim_{x \to 0}g(x)=a>0$, 计算
 $$
@@ -142,6 +197,14 @@ $$
 \end{align*}
 \end{solution}
 
+\begin{points}
+\begin{itemize}
+    \item 抽象函数极限
+    \item $A^B - C^B$ 指数差型极限 (提取公因式)
+    \item $\frac{f(x)}{g(x)} \to 1$ 时的关键代换: $\ln\left(\frac{f}{g}\right) = \ln\left(1 + \frac{f-g}{g}\right) \sim \frac{f-g}{g}$
+\end{itemize}
+\end{points}
+
 \begin{question}
 计算
 \begin{align*}
@@ -149,5 +212,39 @@ $$
 \end{align*}
 \end{question}
 
+\begin{solution}
+\begin{align*}
+\text{原式}&=e^{\lim_{x \to 0^{+}} \frac{1}{\ln x} \cdot \ln(e^{x} - x-1)}\\
+&=e^{\lim_{x \to 0^{+}} \frac{\ln\frac{x^2}{2}}{\ln{x}}}\\
+&=e^{\lim_{x \to 0^{+}} \frac{2 \ln x - \ln 2}{\ln x}}\\
+&= e^{2}
+\end{align*}
+\end{solution}
+
+\begin{points}
+\begin{itemize}
+    \item 幂指函数极限 ($0^0$ 型)
+    \item $\ln L$ 法 (转化为指数形式 $e^{\lim \text{指数} \cdot \ln\text{底数}}$)
+    \item Taylor 展开 ($e^x - 1 - x \sim x^2/2$)
+    \item $\frac{\ln(x^2/2)}{\ln x}$ 等价代换和洛必达
+\end{itemize}
+\end{points}
+
+\begin{question}
+计算
+\[
+\lim_{x \to 0^{+}} \frac{\ln{(\arctan{x})}}{\ln{[\ln{(1 + x)}]}}
+\]
+\end{question}
+
+\begin{solution}
+\[
+\text{原式}= \lim_{x \to 0} \frac{\ln{x}}{\ln{x}} = 1
+\]
+\end{solution}
+
+\begin{note}
+这些都是等价无穷大替换，也就是如果$\alpha \sim \beta \to 0^+$，则$\ln \alpha \sim \ln \beta \to -\infty$
+\end{note}
 
 \end{document}
