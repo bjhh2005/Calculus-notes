@@ -1,0 +1,153 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+\section{极限的计算}
+
+\begin{question}
+计算\[
+\lim_{x \to 0} \frac{\sqrt[m]{1+\alpha x}\sqrt[n]{1+\beta x} - 1}{x}
+\]
+\end{question}
+
+\begin{solution}
+\begin{align*}
+\text{原式}&= \lim_{x \to 0} \sqrt[m]{1+\alpha x}\frac{\sqrt[n]{1+\beta x} - 1}{x} + \lim_{x \to 0} \sqrt[n]{1+\beta x}\frac{\sqrt[m]{1+\alpha x} - 1}{x}\\
+&= \frac{\alpha}{m} + \frac{\beta}{n}
+\end{align*}
+\end{solution}
+
+\begin{question}
+计算
+\[
+\lim_{x \to 0} \frac{1 - \cos{x}\cos{x} \dots \cos{x}}{x^{2}}
+\]
+\end{question}
+
+\begin{solution}
+\begin{align*}
+\text{原式}&= \lim_{x \to 0} \frac{(1 - \cos{x}) + (\cos{x} - \cos{x}\cos{x} \dots \cos{x})}{x^{2}}\\
+&= \frac{1}{2} + \lim_{x \to 0} \frac{1 - \cos{2x} \dots \cos{x}}{x^{2}}\\
+&=\cdots \quad \text{(反复使用上面的拆项方法)}\\
+&=\frac{1}{2} + \frac{1}{2} \cdot 2^{2} + \frac{1}{2} \cdot 3^{2} + \dots + \frac{1}{2} \cdot n^{2}\\
+&=\frac{1}{2} \cdot \frac{n(n+1)(2n+1)}{6} = \frac{n(n+1)(2n+1)}{12} 
+\end{align*}
+\end{solution}
+
+\begin{note}
+前面两个都是添项减项法的运用。其实还有另一种做法。
+\end{note}
+
+\begin{question}
+计算\[
+\lim_{x \to 0} \frac{\sqrt[m]{1+\alpha x}\sqrt[n]{1+\beta x} - 1}{x}
+\]
+\end{question}
+
+\begin{solution}
+\begin{align*}
+\text{原式}&=\lim_{x \to 0} \frac{\ln{[(1+\alpha x)^{\frac{1}{m}} \cdot (1+\beta x)^{\frac{1}{n}}]}}{x}\\
+&= \lim_{x \to 0} \frac{\frac{1}{m}\ln{(1+\alpha x)}}{x} + \lim_{x \to 0} \frac{\frac{1}{n} \ln{(1+\beta x)}}{x}\\
+&= \frac{\alpha}{m} + \frac{\beta}{n}\\
+\end{align*}
+\end{solution}
+
+\begin{question}
+计算\[
+\lim_{x \to 0} \frac{1 - \cos{x}\cos{x} \dots \cos{x}}{x^{2}}
+\]
+\end{question}
+
+\begin{solution}
+\begin{align*}
+\text{原式}&= -\lim_{x \to 0} \frac{\cos x \cos 2x \cdots \cos nx - 1}{x^{2}}\\
+&= -\lim_{x \to 0} \frac{\ln \cos x \cdots \cos nx}{x^{2}}\\
+&= -\sum_{k=1}^{n} \lim_{x \to 0} \frac{\ln \cos kx}{x^{2}}\\
+&= -\sum_{k=1}^{n} \lim_{x \to 0} \frac{\cos kx - 1}{x^{2}}\\
+&= -\sum_{k=1}^{n} (-\frac{1}{2}k^{2}) = \frac{n(n+1)(2n+1)}{12}\\
+\end{align*}  
+\end{solution}
+
+\begin{note}
+先反用$\ln x \sim x - 1 (x \to 1)$，再正用$\ln x \sim x - 1 (x \to 1)$，尤其适用于含有"$A_1 A_2 \dots A_n - 1$"结构的极限。
+\end{note}
+
+\begin{question}
+计算
+\[
+\lim_{x \to 0} \frac{1-\cos x \sqrt{\cos 2x} \cdots \sqrt[n]{\cos nx}}{x^{2}}
+\]
+\end{question}
+
+\begin{solution}
+\begin{align*}
+\text{原式} &= \lim_{x \to 0} \frac{1-\cos x (\cos 2x)^{\frac{1}{2}} \cdots (\cos nx)^{\frac{1}{n}}}{x^{2}} \\
+&= \lim_{x \to 0} \frac{-\ln \left( \cos x (\cos 2x)^{\frac{1}{2}} \cdots (\cos nx)^{\frac{1}{n}} \right)}{x^{2}}\\
+&= -\lim_{x \to 0} \frac{\sum_{k=1}^{n} \frac{1}{k}\ln (\cos kx)}{x^{2}} \\
+&= -\sum_{k=1}^{n} \lim_{x \to 0} \frac{\frac{1}{k}\ln (\cos kx)}{x^{2}} \\
+&= -\sum_{k=1}^{n} \frac{1}{k} \lim_{x \to 0} \frac{-\frac{(kx)^{2}}{2}}{x^{2}} \quad \text{（利用等价无穷小 } \ln(\cos u) \sim -\frac{u^2}{2} \text{）} \\
+&= \frac{n(n+1)}{4}
+\end{align*}
+\end{solution}
+
+\begin{question}
+计算\[
+\lim_{x \to 0} \frac{(1 - \cos x) \left[x - \ln(1 + \tan x)\right]}{x^{4}}
+\]
+\end{question}
+
+\begin{solution}
+\begin{align*}
+\text{原式}&=\lim_{x \to 0} \frac{\frac{x^2}{2} [x - \ln(1 + \tan x)]}{x^4}\\
+&=\frac{1}{2} \lim_{x \to 0} \frac{x - \ln(1 + \tan x)}{x^2}\\
+&=\frac{1}{2} \left[\lim_{x \to 0} \frac{x - \tan x}{x^2} + \lim_{x \to 0} \frac{\tan x - \ln(1 + \tan x)}{x^2} \right]\\
+&=\frac{1}{2}\left[0+\frac{1}{2}\right]\\
+&=\frac{1}{4}
+\end{align*}
+\end{solution}
+
+\begin{note}
+$x- \ln (1+x) \sim \frac{x^2}{2} \quad(x \to 0)$
+\end{note}
+
+\begin{question}
+计算\[
+\lim_{x \to 0} \frac{(3+2\tan x)^x - 3^x}{3\sin^2 x + x^3 \cdot \cos\frac{1}{x}}
+\] 
+\end{question}
+
+\begin{solution}
+\begin{align*}
+\text{原式}&=\lim_{x \to 0} \frac{(3+2\tan x)^x - 3^x}{3\sin^2 x}\quad (\text{无穷小的吸收律})\\
+&=\lim_{x \to 0} \frac{3^{x}\left[(1+\frac{2}{3}\mathrm{tan}x)^{x}-1\right]}{3x^{2}}\\
+&=\frac{1}{3} \lim_{x \to 0} \frac{x \ln(1 + \frac{2}{3} \tan x)}{x^2}\\
+&=\frac{1}{3} \lim_{x \to 0} \frac{\frac{2}{3} \tan x}{x}\\
+&= \frac{2}{9}
+\end{align*}
+\end{solution}
+
+\begin{question}
+设$f(x),g(x)$在$x=0$的邻域$U$内有定义，且对$\forall x \in U$, 均有$f(x) \neq g(x)$, 且$\lim_{x \to 0} f(x)=\lim_{x \to 0}g(x)=a>0$, 计算
+$$
+\lim_{x \to 0} \frac{\left[ f(x) \right]^{g(x)} - \left[ g(x) \right]^{g(x)}}{f(x) - g(x)}
+$$
+\end{question}
+
+\begin{solution}
+\begin{align*}
+\text{原式} &= \lim_{x \to 0} [g(x)]^{g(x)} \cdot \frac{\left[\frac{f(x)}{g(x)}\right]^{g(x)} - 1}{f(x) - g(x)}\\
+&= a^a \lim_{x \to 0} \frac{g(x) \cdot \ln \frac{f(x)}{g(x)}}{f(x) - g(x)}\\
+&= a^{a+1} \lim_{x \to 0} \frac{\frac{f(x) - g(x)}{g(x)}}{f(x) - g(x)}\\
+&= a^a
+\end{align*}
+\end{solution}
+
+\begin{question}
+计算
+\begin{align*}
+\lim_{x \to 0^{+}} (e^{x} - 1 - x)^\frac{1}{\ln x}
+\end{align*}
+\end{question}
+
+
+\end{document}

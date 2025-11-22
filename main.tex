@@ -1,0 +1,30 @@
+\documentclass[cn, 11pt, cyan]{elegantnote}
+% 选项说明：
+% cn   : 启用中文支持
+% 11pt : 字体大小
+% blue : 主题颜色 (可选 green, cyan, blue, sakurapink)
+
+\title{高等数学笔记}
+\author{北郊HH}
+\institute{\url{bjhh2005@outlook.com}}
+\date{\today}
+\usepackage{amsmath, amssymb} 
+\usepackage{mathrsfs}
+\usepackage{subfiles}
+
+
+\allowdisplaybreaks
+
+
+\newtheorem{question}{问题}[section]
+\newtheorem*{solution}{解答:}
+\newtheorem{points}{知识点：}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\subfile{chapters/chap1 极限计算.tex}
+
+
+\end{document}
